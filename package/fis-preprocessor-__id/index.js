@@ -19,6 +19,6 @@ module.exports = function (content, file, options) {
   });
 };
 
-module.defaultOptions = {
+module.exports.defaultOptions = {
   withQuote: true
 };
