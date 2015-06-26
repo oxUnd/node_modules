@@ -10,12 +10,15 @@ module.exports = function (content, file, options) {
     var info = fis.util.stringQuote($1);
     var result = fis.uri(info.rest, file.dirname);
     if (result.file) {
-      return info.quote + result.file.getId() + info.quote;
+      if (options.withQuote) {
+        return info.quote + result.file.getId() + info.quote;
+      }
+      return result.file.getId();
     }
     return all;
   });
 };
 
 module.defaultOptions = {
-  
+  withQuote: true
 };
